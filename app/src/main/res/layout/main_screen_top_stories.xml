@@ -2,62 +2,81 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:elevation="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="200dp"
+            android:orientation="horizontal">
 
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/topStoryImage"
-                android:layout_width="match_parent"
+                android:layout_width="175dp"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/circular"
+                android:padding="5dp"/>
 
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/topStorySource"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="25dp"
-                android:text="@string/source"
-                android:textAlignment="textStart"
-                android:textColor="@color/blue"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                >
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/topStoryTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:text="@string/title"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/topStorySource"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/source"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/topStoryDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:text="@string/description"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/topStoryTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/title"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/topStoryDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+
+                    android:text="@string/description"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/publishedAt"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/topStoriesPublishedAt"/>
+
+
+            </LinearLayout>
 
 
         </LinearLayout>

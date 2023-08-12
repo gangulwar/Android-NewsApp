@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="10dp">
+        android:elevation="10dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,13 +27,28 @@
                 android:src="@mipmap/ic_launcher" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/source"
+                android:layout_marginTop="15dp"
+                android:textSize="20dp"
+                android:id="@+id/source"
+                android:textColor="@color/blue"
+                android:layout_marginStart="10dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="23dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/title"
                 android:textSize="23sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="25dp"
+                android:textColor="@color/black"
+                />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

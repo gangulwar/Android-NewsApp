@@ -45,12 +45,13 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.Vi
                 .into(holder.imageView);
 
         holder.title.setText(newsModalArrayList.get(position).title);
-
+        holder.source.setText(newsModalArrayList.get(position).source);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, NewsDetailActivity.class);
                 intent.putExtra("object", newsModalArrayList.get(position));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
@@ -67,11 +68,15 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.Vi
         ImageView imageView;
         TextView title;
 
+        TextView source;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageViewNews);
             title = itemView.findViewById(R.id.Title);
+            source = itemView.findViewById(R.id.source);
+
         }
     }
 }

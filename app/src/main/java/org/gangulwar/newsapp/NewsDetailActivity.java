@@ -68,7 +68,7 @@ public class NewsDetailActivity extends AppCompatActivity {
         detailNewsTitle.setText(title);
         detailNewsBody.setText(body);
         detailAuthor.setText(author);
-        detailPublish.setText(date);
+        detailPublish.setText(Constants.getTimeAgo(date));
         fullArticleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

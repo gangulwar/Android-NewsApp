@@ -13,7 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class TopStroiesAdapter extends RecyclerView.Adapter<TopStroiesAdapter.ViewHolder> {
 
@@ -39,11 +42,11 @@ public class TopStroiesAdapter extends RecyclerView.Adapter<TopStroiesAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull TopStroiesAdapter.ViewHolder holder, int position) {
 
-        String imageUrl = topStroiesModalArrayList.get(position).imageUrl;
-        String source = topStroiesModalArrayList.get(position).source;
-        String title = topStroiesModalArrayList.get(position).title;
-        String description = topStroiesModalArrayList.get(position).description;
-
+        String imageUrl = Constants.shortenDescription(topStroiesModalArrayList.get(position).imageUrl);
+        String source = Constants.shortenDescription(topStroiesModalArrayList.get(position).source);
+        String title = Constants.shortenDescription(topStroiesModalArrayList.get(position).title);
+        String description = Constants.shortenDescription(topStroiesModalArrayList.get(position).description);
+        String date = Constants.getTimeAgo(topStroiesModalArrayList.get(position).date);
         Picasso.get()
                 .load(imageUrl)
                 .placeholder(R.drawable.loadinggif)
@@ -53,12 +56,13 @@ public class TopStroiesAdapter extends RecyclerView.Adapter<TopStroiesAdapter.Vi
         holder.source.setText(source);
         holder.title.setText(title);
         holder.description.setText(description);
-
+        holder.date.setText(date);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, NewsDetailActivity.class);
                 intent.putExtra("object", topStroiesModalArrayList.get(position));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
@@ -88,8 +92,9 @@ public class TopStroiesAdapter extends RecyclerView.Adapter<TopStroiesAdapter.Vi
             source = itemView.findViewById(R.id.topStorySource);
             title = itemView.findViewById(R.id.topStoryTitle);
             description = itemView.findViewById(R.id.topStoryDescription);
-
+            date = itemView.findViewById(R.id.topStoriesPublishedAt);
         }
     }
+
 
 }
