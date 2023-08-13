@@ -4,29 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="220dp"
     android:orientation="vertical"
-    android:gravity="center_vertical"
-    android:padding="10dp">
+    android:gravity="bottom"
+    android:padding="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/headerbg">
 
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        android:src="@drawable/user2" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hi_user"
-        android:textSize="24sp"
-        />
+        android:gravity="center"
+        android:textSize="24sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="News"
+        android:text="Developed by Gangulwar"
         android:textSize="24sp"
+        android:visibility="invisible"
         />
 
 

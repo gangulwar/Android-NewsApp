@@ -19,7 +19,8 @@
         android:fitsSystemWindows="true"
         android:id="@+id/navigationView"
         app:headerLayout="@layout/header_layout"
-        app:menu="@menu/navigation_items">
+        app:menu="@menu/navigation_items"
+        android:background="#FFFFFF">
 
     </com.google.android.material.navigation.NavigationView>
 
