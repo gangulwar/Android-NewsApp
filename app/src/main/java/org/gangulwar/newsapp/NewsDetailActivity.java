@@ -72,7 +72,8 @@ public class NewsDetailActivity extends AppCompatActivity {
         fullArticleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                Intent intent = new Intent(NewsDetailActivity.this, WebViewActivity.class);
+                intent.putExtra("key",url);
                 startActivity(intent);
             }
         });

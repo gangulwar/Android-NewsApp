@@ -15,6 +15,9 @@
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
         <activity
+            android:name=".WebViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".NavigationDrawer"
             android:exported="false" />
         <activity

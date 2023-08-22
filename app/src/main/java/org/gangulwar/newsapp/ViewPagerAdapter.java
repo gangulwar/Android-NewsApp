@@ -16,48 +16,54 @@ class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private ArrayList<TopStroiesModal> arrayListForTab1;
     private ArrayList<TopStroiesModal> arrayListForTab2;
-Context context;
+    Context context;
+
     public ViewPagerAdapter(FragmentManager fm, ArrayList<TopStroiesModal> dataForTab1, ArrayList<TopStroiesModal> dataForTab2, Context context) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         arrayListForTab1 = dataForTab1;
         arrayListForTab2 = dataForTab2;
-        this.context=context;
+        this.context = context;
     }
-
-
 
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        TabFragment tabFragment = new TabFragment();
-        Bundle args = new Bundle();
+        //TabFragment tabFragment = new TabFragment();
+        //Bundle args = new Bundle();
 
         switch (position) {
             case 0:
-                args.putParcelableArrayList("data", arrayListForTab1);
-                System.out.println("Clicked");
-                break;
+                return new BusinessFragment(context,0);
             case 1:
-                args.putParcelableArrayList("data", arrayListForTab1);
-                break;
+                return new BusinessFragment(context,1);
             // ... Add more cases as needed ...
             case 2:
-                return new BusinessFragment();
+                return new BusinessFragment(context,2);
+
+            case 3:
+                return new BusinessFragment(context,3);
+
+            case 4:
+                return new BusinessFragment(context,4);
+
+            case 5:
+                return new BusinessFragment(context,5);
         }
 
         // args.putSerializable("context", context);
-        tabFragment.setArguments(args);
+        //tabFragment.setArguments(args);
 
         // Set the Context for the TabFragment
-        tabFragment.setContext(context);
+        //tabFragment.setContext(context);
 
-        return tabFragment;
+        //return tabFragment;
+        return null;
     }
 
     @Override
     public int getCount() {
-        return 3; // Number of tabs
+        return 5; // Number of tabs
     }
 
     @Nullable
@@ -66,18 +72,24 @@ Context context;
         // Set the tab titles
         switch (position) {
             case 0:
-                return "Tab 1";
+                return "Business";
             case 1:
-                return "Tab 2";
+                return "Entertainment";
             // ... Add more cases as needed ...
+            case 2:
+                return "Science";
             case 3:
-               return  "Tab 3";
+                return "Sports";
+            case 4:
+                return "Technology";
+            case 5:
+                return " ";
             default:
                 return null;
         }
     }
 
-    public void getArrayList(){
+    public void getArrayList() {
 
         arrayListForTab1.add(new TopStroiesModal(
                 "NPR",
