@@ -117,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
                     titleOfToolBar.setText("Categories");
 
                     loadFragment(new CategoriesFragment(getApplicationContext()), true);
+                } else if (id==R.id.favorite) {
+                    Toast.makeText(getApplicationContext(), "Favorite Clicked", Toast.LENGTH_SHORT).show();
+                    titleOfToolBar.setText("Favorites");
+                    loadFragment(new FavoriteFragment(getApplicationContext()), true);
                 } else if (id == R.id.aboutUs) {
                     Toast.makeText(getApplicationContext(), "About Us Clicked", Toast.LENGTH_SHORT).show();
                     titleOfToolBar.setText("About Us");

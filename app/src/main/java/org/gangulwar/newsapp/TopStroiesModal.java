@@ -14,6 +14,7 @@ public class TopStroiesModal implements Parcelable {
     String imageUrl;
     String date;
     String body;
+    boolean isLiked = false;
 
     public TopStroiesModal(String source, String author, String title, String description, String url, String imageUrl, String date, String body) {
         this.source = source;
